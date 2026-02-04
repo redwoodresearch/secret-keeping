@@ -34,6 +34,9 @@ cd ../
 uv pip install -e ./safety-tooling
 uv pip install -e .
 
+# Install and setup pre-commit hooks
+pre-commit install
+
 # Other utils for development
 run_with_sudo apt update
 run_with_sudo apt install -y tmux gh
