@@ -29,7 +29,6 @@ venv/
 ENV/
 env/
 .conda/
-experiments/model_organisms/petri_evals/.venv/
 
 # Testing
 .pytest_cache/
@@ -62,3 +61,6 @@ logs/
 .env
 .env.local
 .env.*.local
+
+# Experiment results
+experiments/**/results/

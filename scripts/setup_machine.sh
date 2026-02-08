@@ -28,13 +28,14 @@ source .venv/bin/activate
 
 # Install safety-tooling in editable mode
 cd safety-tooling
-git switch abhay/auditing-agents || echo "Branch abhay/auditing-agents not found, using current branch"
+git switch abhay/auditing_agents || echo "Branch abhay/auditing_agents not found, using current branch"
 cd ../
 
 uv pip install -e ./safety-tooling
 uv pip install -e .
 
 # Install and setup pre-commit hooks
+uv pip install pre-commit
 pre-commit install
 
 # Other utils for development

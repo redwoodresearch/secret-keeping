@@ -1,13 +1,9 @@
 import asyncio
 import json
-import os
-import pathlib
 import re
-import sys
 from pathlib import Path
 from typing import Any, Callable, Optional
 
-import torch
 from jinja2 import Environment, FileSystemLoader
 from tqdm.auto import tqdm
 
@@ -167,6 +163,7 @@ async def gather_with_limits(
     semaphore: Optional[asyncio.Semaphore] = None,
     timeout_seconds: Optional[float] = None,
     render_tqdm: bool = False,
+    tqdm_desc: Optional[str] = None,
 ):
     """
     Execute multiple async tasks with concurrency limits and optional timeout.
@@ -177,6 +174,7 @@ async def gather_with_limits(
         semaphore: Semaphore to use for concurrency limits (either this or n_concurrents must be provided)
         timeout_seconds: Optional timeout for each individual task
         render_tqdm: Whether to render a progress bar (requires tqdm)
+        tqdm_desc: Description for the tqdm progress bar
 
     Returns:
         List of results from all tasks
@@ -208,6 +206,6 @@ async def gather_with_limits(
     wrapped_tasks = [wrapped_task(task) for task in tasks]
 
     if render_tqdm:
-        return await tqdm.gather(*wrapped_tasks)
+        return await tqdm.gather(*wrapped_tasks, desc=tqdm_desc)
     else:
         return await asyncio.gather(*wrapped_tasks)

@@ -9,9 +9,20 @@ description = "Secret keeping project"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "torch",
     "jinja2",
     "tqdm",
+    "docent-python==0.1.27a0",
+    "matplotlib-inline",
+    "cloudpickle",
+    "torchtyping",
+    "torch==2.7.0",
+    "openai>=2.17.0",
+    "claude-agent-sdk",
+    "fastmcp",
+    "fastapi",
+    "uvicorn",
+    "ipykernel",
+    "petri @ git+https://github.com/safety-research/petri@abhay/auditing-agents",
 ]
 
 [project.optional-dependencies]
