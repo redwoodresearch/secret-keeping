@@ -281,7 +281,7 @@ for qf in sorted(quirk_families):
         bar_width=bar_width,
         rotate_xticks=15,
         show_values=True,
-        figsize=(12, 4),
+        figsize=(12, 5),
         split_spacing=1.2,
         category_order=category_order,
         group_order=group_display_order,

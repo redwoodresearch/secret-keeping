@@ -28,7 +28,7 @@ echo "Runs per combo: $NUM_RUNS"
 echo "Output directory: $OUTPUT_DIR"
 echo "========================================"
 
-MAX_CONCURRENT=1
+MAX_CONCURRENT=3
 
 job_count=0
 for model in "${MODELS[@]}"; do
